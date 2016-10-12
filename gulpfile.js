@@ -69,6 +69,7 @@ paths.mainHtml = paths.source  +'index.html';
 // SCSS
 paths.mainSCSS = paths.source  +'scss/main.scss';
 paths.toastSCSS = paths.source  +'scss/toast.scss';
+paths.navSCSS = paths.source  +'scss/nav.scss';
 
 // Static
 paths.manifest = paths.source + 'manifest.json';
@@ -96,6 +97,7 @@ gulp.task('watch', function () {
 	gulp.watch(paths.angularToastService, ['min:js']);
 	gulp.watch(paths.angularMainCtrl, ['min:js']);
 	gulp.watch(paths.toastSCSS, ['min:css']);
+	gulp.watch(paths.navSCSS, ['min:css']);
 	gulp.watch(paths.mainSCSS, ['min:css']);
 });
 

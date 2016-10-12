@@ -1,0 +1,45 @@
+{
+	"name": "restaurant-reviewer",
+	"version": "1.0.0",
+	"description": "Restaurant review application with a focus on accessibility.",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/elmasria/restaurant-reviewer.git"
+	},
+	"keywords": [
+		"accessibility"
+	],
+	"author": "Ahmad El Masri",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/elmasria/restaurant-reviewer/issues"
+	},
+	"homepage": "https://github.com/elmasria/restaurant-reviewer#readme",
+	"devDependencies": {
+		"angular": "^1.5.8",
+		"angular-animate": "^1.5.8",
+		"angular-cookies": "^1.5.8",
+		"angular-route": "^1.5.8",
+		"bootstrap": "^3.3.7",
+		"browser-sync": "^2.16.0",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^3.1.1",
+		"gulp-clean": "^0.3.2",
+		"gulp-clean-css": "^2.0.12",
+		"gulp-concat": "^2.6.0",
+		"gulp-cssmin": "^0.1.7",
+		"gulp-htmlmin": "^3.0.0",
+		"gulp-remove-html-comments": "^1.0.1",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^2.3.2",
+		"gulp-strip-comments": "^2.4.3",
+		"gulp-strip-css-comments": "^1.2.0",
+		"gulp-uglify": "^2.0.0",
+		"jquery": "^3.1.0",
+		"merge-stream": "^1.0.0"
+	}
+}

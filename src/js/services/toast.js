@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	angular.module('public-transportation-app').factory('toastService', ['constants', mainFunction]);
+	angular.module('restaurant-reviewer-app').factory('toastService', ['constants', mainFunction]);
 
 	function mainFunction(cnst) {
 		var appToast = new Toast();

@@ -25,8 +25,9 @@ var paths = {
 paths.templatesDest = paths.webroot + 'templates';
 paths.jsDest = paths.webroot + 'js';
 paths.cssDest = paths.webroot + 'css';
-paths.fontDest = paths.cssDest + '/fonts';
+paths.fontDest = paths.webroot + '/fonts';
 paths.imagDest = paths.webroot + 'images';
+paths.dataDest = paths.webroot + 'data';
 
 /// Vendors
 
@@ -42,7 +43,7 @@ paths.jquery = paths.node_module + 'jquery/dist/jquery.js';
 // Bootstrap
 paths.bootstrapCSS = paths.node_module + 'bootstrap/dist/css/bootstrap.css';
 paths.bootstrapJS = paths.node_module + 'bootstrap/dist/js/bootstrap.js';
-paths.bootstrapFonts = paths.node_module + 'bootstrap/dist/fonts/*';
+paths.bootstrapFonts = paths.node_module + 'bootstrap/dist/fonts/**/*';
 
 
 /// Project
@@ -55,27 +56,45 @@ paths.appRoutes = paths.source + 'js/app.routes.js';
 
 // Controllers
 paths.angularMainCtrl = paths.source + 'js/controllers/main.js';
+paths.angularAllRestaurantsCtrl = paths.source + 'js/controllers/all-restaurants.js';
+paths.angularRestaurantCtrl = paths.source + 'js/controllers/restaurant.js';
+paths.angularAddReviewCtrl = paths.source + 'js/controllers/add-review.js';
+
 
 // Services
 paths.angularConstants = paths.source + 'js/services/constants.js';
 paths.angularToastService = paths.source + 'js/services/toast.js';
+paths.angularHttpService = paths.source + 'js/services/http-service.js';
+paths.angularModalService = paths.source + 'js/services/modal.js';
 
 // Directives
+paths.angularModalDirective = paths.source + 'js/directives/modal-directive.js';
+paths.angularReviewDetailsDirective = paths.source + 'js/directives/review-details.js';
 
 
 // HTML
 paths.mainHtml = paths.source  +'index.html';
+paths.AllRestaurantsHtmlTemplate = paths.source  +'templates/all-restaurants.html';
+paths.RestaurantHtmlTemplate = paths.source  +'templates/restaurant.html';
+paths.ReviewModalTemplate = paths.source  +'templates/review-modal.html';
+paths.ReviewDetailsTemplate = paths.source  +'templates/review-details.html';
+
+
 
 // SCSS
 paths.mainSCSS = paths.source  +'scss/main.scss';
 paths.toastSCSS = paths.source  +'scss/toast.scss';
 paths.navSCSS = paths.source  +'scss/nav.scss';
+paths.allRestaurantSCSS = paths.source  +'scss/all-restaurant.scss';
+paths.RestaurantSCSS = paths.source  +'scss/restaurant.scss';
+
 
 // Static
 paths.manifest = paths.source + 'manifest.json';
 paths.favicon = paths.source + 'images/favicon.ico';
 paths.images = paths.source + 'images/**/*';
-paths.scss = paths.source + 'scss/**/*.scss'
+paths.scss = paths.source + 'scss/**/*.scss';
+paths.data = paths.source + 'data/restaurants.json';
 
 
 gulp.task('default',['copy:static', 'copy:images', 'minify:html','minify:html-templates', 'min:css', 'min:js', 'watch', 'server']);
@@ -93,12 +112,34 @@ gulp.task('server', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch(paths.mainHtml, ['minify:html']);
-	gulp.watch(paths.angularToastService, ['min:js']);
-	gulp.watch(paths.angularMainCtrl, ['min:js']);
-	gulp.watch(paths.toastSCSS, ['min:css']);
-	gulp.watch(paths.navSCSS, ['min:css']);
-	gulp.watch(paths.mainSCSS, ['min:css']);
+	gulp.watch([
+		paths.angularToastService,
+		paths.angularMainCtrl,
+		paths.angularAllRestaurantsCtrl,
+		paths.angularModalDirective,
+		paths.angularModalService,
+		paths.angularHttpService,
+		paths.angularRestaurantCtrl,
+		paths.angularAddReviewCtrl,
+		paths.angularReviewDetailsDirective], ['min:js']);
+
+	gulp.watch([
+		paths.toastSCSS,
+		paths.navSCSS,
+		paths.mainSCSS,
+		paths.allRestaurantSCSS,
+		paths.RestaurantSCSS], ['min:css']);
+
+	gulp.watch([
+		paths.AllRestaurantsHtmlTemplate,
+		paths.RestaurantHtmlTemplate,
+		paths.ReviewModalTemplate,
+		paths.ReviewDetailsTemplate], ['minify:html-templates']);
+
+
+
+	gulp.watch([paths.mainHtml], ['minify:html']);
+
 });
 
 gulp.task('clean', function () {
@@ -109,6 +150,13 @@ gulp.task('clean', function () {
 gulp.task('copy:static', function(){
 	gulp.src([paths.favicon, paths.manifest])
 	.pipe(gulp.dest(paths.webroot));
+
+	gulp.src([paths.bootstrapFonts])
+	.pipe(gulp.dest(paths.fontDest));
+
+
+	gulp.src([paths.data])
+	.pipe(gulp.dest(paths.dataDest));
 });
 
 gulp.task('copy:images', function () {
@@ -125,7 +173,11 @@ gulp.task('minify:html', function() {
 });
 
 gulp.task('minify:html-templates', function() {
-	return gulp.src([])
+	return gulp.src([
+		paths.AllRestaurantsHtmlTemplate,
+		paths.RestaurantHtmlTemplate,
+		paths.ReviewModalTemplate,
+		paths.ReviewDetailsTemplate])
 	.pipe(removeHtmlComments())
 	.pipe(htmlmin({collapseWhitespace: true}))
 	.pipe(gulp.dest(paths.templatesDest))
@@ -144,7 +196,14 @@ gulp.task('min:js', function() {
 		paths.appRoutes,
 		paths.angularConstants,
 		paths.angularMainCtrl,
-		paths.angularToastService ])
+		paths.angularToastService,
+		paths.angularHttpService,
+		paths.angularModalService,
+		paths.angularModalDirective,
+		paths.angularReviewDetailsDirective,
+		paths.angularAllRestaurantsCtrl,
+		paths.angularRestaurantCtrl,
+		paths.angularAddReviewCtrl ])
 	.pipe(concat(paths.jsDest +'/app.min.js'))
 	//.pipe(strip())
 	//.pipe(uglify())

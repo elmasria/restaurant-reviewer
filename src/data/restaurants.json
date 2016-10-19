@@ -1,0 +1,94 @@
+{
+	"restaurants":[{
+		"id": 1,
+		"name": "Tales & Spirits",
+		"cuisines": "Italian, Continental, Cafe",
+		"photograph": "https://media-cdn.tripadvisor.com/media/photo-s/03/27/fd/71/tales-and-spirits.jpg",
+		"average_rating": 3,
+		"location": {
+			"address": "Plot 64, Shivaji Housing Society, Off Senapati Bapat Road, Senapati Bapat Road, Pune",
+			"city": "Pune"
+		},
+		"periods": [
+			{
+				"close": {
+					"day": 0,
+					"time": "2130"
+				},
+				"open": {
+					"day": 0,
+					"time": "1000"
+				}
+			},
+			{
+				"close": {
+					"day": 1,
+					"time": "2130"
+				},
+				"open": {
+					"day": 1,
+					"time": "1000"
+				}
+			},
+			{
+				"close": {
+					"day": 2,
+					"time": "2130"
+				},
+				"open": {
+					"day": 2,
+					"time": "1000"
+				}
+			},
+			{
+				"close": {
+					"day": 3,
+					"time": "2130"
+				},
+				"open": {
+					"day": 3,
+					"time": "1000"
+				}
+			},
+			{
+				"close": {
+					"day": 4,
+					"time": "2130"
+				},
+				"open": {
+					"day": 4,
+					"time": "1000"
+				}
+			},
+			{
+				"close": {
+					"day": 5,
+					"time": "2130"
+				},
+				"open": {
+					"day": 5,
+					"time": "1000"
+				}
+			},
+			{
+				"close": {
+					"day": 6,
+					"time": "2130"
+				},
+				"open": {
+					"day": 6,
+					"time": "1000"
+				}
+			}
+		],
+		"reviews": [
+			{
+				"author_name":"Ahmad El Masri",
+				"profile_photo_url": "https://lh3.googleusercontent.com/9RT30I-3LWs9ESWOIPwXh1sTJ3zvi1jNBsxBs19EmqJWX7CcSBk8_mTxE5C5DxzjUItbVO9d=w1920-h1080-rw-no",
+				"rating":3,
+				"text":"Basic food, amazingly executed. I had the quesadilla plate and it was totally amazing. Traditional Mexican, not Tex mex. Friendly staff.",
+				"time":"1475372716"
+			}
+		]
+	}]
+}

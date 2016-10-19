@@ -1,0 +1,49 @@
+<div class="space-section"></div>
+<section ng-controller="restaurantController as restaurantCtrl" class="col-xs-12 col-lg-10 col-lg-offset-1 restaurant-section">
+	<div class="row">
+		<div class="col-xs-12 col-lg-8">
+			<h3 class="h3-restaurant-name">{{restaurantCtrl.restaurant.name}}</h3>
+		</div>
+		<div class="col-xs-12 div-restaurant-rating col-lg-offset-2 col-lg-2" aria-label="Average Rating For {{restaurantCtrl.restaurant.name}} is {{restaurantCtrl.restaurant.average_rating}}" tabindex="0">
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': restaurantCtrl.restaurant.average_rating > 1, 'glyphicon-star-empty': restaurantCtrl.restaurant.average_rating == 0}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': restaurantCtrl.restaurant.average_rating >=2, 'glyphicon-star-empty': restaurantCtrl.restaurant.average_rating <2}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': restaurantCtrl.restaurant.average_rating >=3, 'glyphicon-star-empty': restaurantCtrl.restaurant.average_rating <3}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': restaurantCtrl.restaurant.average_rating >=4, 'glyphicon-star-empty': restaurantCtrl.restaurant.average_rating <4}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': restaurantCtrl.restaurant.average_rating >=5, 'glyphicon-star-empty': restaurantCtrl.restaurant.average_rating < 5}"></span>
+
+		</div>
+	</div>
+	<div class="image-container">
+		<img ng-src="{{restaurantCtrl.restaurant.photograph}}" class="restaurant-image" alt="Image for {{restaurantCtrl.restaurant.name}}">
+	</div>
+	<section class="section-restaurant-details">
+		<p><i class="glyphicon glyphicon-map-marker"></i><span> {{restaurantCtrl.restaurant.location.address}}</span> </p>
+		<p><i class="glyphicon glyphicon-cutlery"></i><span> {{restaurantCtrl.restaurant.cuisines}}</span> </p>
+	</section>
+	<h4 class="h4-header">Reviews</h4>
+	<section class="section-reviews">
+		<div class="col-xs-12 col-lg-6 div-review" ng-repeat="review in restaurantCtrl.restaurant.reviews">
+			<a href="#/" class="reviewer-link" aria-label="Read More review from {{review.author_name}}" data-review="{{review}}" data-toggle="modal" data-target="#reviewModal" ng-click="restaurantCtrl.moreReviewDetails($event)">{{review.author_name}}</a>
+			<p>{{review.text.slice(0,250)}}</p>
+			<div class="row">
+				<div class="col-xs-6"><i class="glyphicon glyphicon-time"></i> {{review.time*1000|date}}</div>
+				<div class="col-xs-6 text-right">
+
+					<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': review.review.rating > 1, 'glyphicon-star-empty': review.review.rating == 0}"></span>
+					<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': review.rating >=2, 'glyphicon-star-empty': review.rating <2}"></span>
+					<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': review.rating >=3, 'glyphicon-star-empty': review.rating <3}"></span>
+					<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': review.rating >=4, 'glyphicon-star-empty': review.rating <4}"></span>
+					<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': review.rating >=5, 'glyphicon-star-empty': review.rating < 5}"></span>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<button aria-label="Add Review for {{restaurantCtrl.restaurant.name}}" data-toggle="modal" data-target="#addReviewModal" class="btn-add-review">
+		<i class="glyphicon glyphicon-pencil"></i>
+	</button>
+<reviewer-modal></reviewer-modal>
+
+<review-modal text="{{restaurantCtrl.selectedtext}}" author="{{restaurantCtrl.selectedAuthor}}" rating={{restaurantCtrl.selectedrating}} time="{{restaurantCtrl.selectedtime}}"></review-modal>
+</section>

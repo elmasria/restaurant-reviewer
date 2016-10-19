@@ -1,0 +1,32 @@
+<div id="reviewModal" class="modal fade" role="dialog" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header featured">
+				<h4 class="modal-title focus-style" aria-label="{{author}}" tabindex="0">{{author}}</h4>
+			</div>
+
+			<div class="modal-body">
+				<div >
+					<p aria-label="{{text}}" class="focus-style" tabindex="0">{{text}}</p>
+
+					<div class="row">
+
+						<div class="col-xs-6 focus-style"  aria-label="reviewed {{time*1000|date}}"  tabindex="0"><i class="glyphicon glyphicon-time "></i> {{time*1000|date}}
+						</div>
+
+						<div class="col-xs-6 text-right focus-style" aria-label="{{author}} rate {{rating}}"  tabindex="0">
+							<span class="glyphicon rating-icon" ng-class="{'glyphicon-star': rating > 1, 'glyphicon-star-empty': rating == 0}"></span>
+							<span class="glyphicon rating-icon" ng-class="{'glyphicon-star': rating >=2, 'glyphicon-star-empty': rating <2}"></span>
+							<span class="glyphicon rating-icon" ng-class="{'glyphicon-star': rating >=3, 'glyphicon-star-empty': rating <3}"></span>
+							<span class="glyphicon rating-icon" ng-class="{'glyphicon-star': rating >=4, 'glyphicon-star-empty': rating <4}"></span>
+							<span class="glyphicon rating-icon" ng-class="{'glyphicon-star': rating >=5, 'glyphicon-star-empty': rating < 5}"></span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,16 +1,20 @@
-.navbar-default.featured, .navbar-default.featured .navbar-collapse {
-	background-color: #222d37;
+.navbar-default.featured {
+	background-color: #dc3352;
 	border:0;
 }
 
 .navbar-default.featured .navbar-brand {
-    color: #06791f;
-    font-weight: bold;
+	color: #fff;
+	font-weight: bold;
+}
+
+.navbar-header {
+	width: 100%;
 }
 
 .featured .navbar-nav {
-    margin-top: 0;
-    margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .navbar-default.featured .navbar-nav>li>a {
@@ -21,23 +25,59 @@
 }
 
 
-.featured .navbar-collapse{
-	border-top: 0;
-	-webkit-box-shadow: 0;
-	box-shadow: inset 0 0 0;
+.btn-search{
+	height: 50px;
+	width: 50px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(167,156,142,.52);
+	border-radius: 50%;
+	border: 3px solid #fff;
+	cursor: pointer;
+	position: absolute;
+	bottom: -40px;
+	left: 50%;
+	margin-left: -25px;
+	font-size: 2rem;
+	outline: 0;
+	color: #000;
+	padding: 8px;
+}
+.btn-search:hover, .btn-search:focus {
+	background: #dc3352;
+	color: #fff;
+}
+.featured .glyphicon-filter{
+	display: inline-block;
+	font: normal normal normal 14px/1 'Glyphicons Halflings';
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	top:3px;
 }
 
 .navbar-toggle.featured {
 	border:0;
 }
 
-.navbar-toggle.featured:hover {
-	background-color: transparent;
-}
-
-
 @media (min-width: 768px){
 	.navbar.featured {
 		border-radius: 0;
+	}
+}
+
+@media (max-width: 768px){
+	.featured .navbar-header{
+
+		margin: 0;
+		text-align: center;
+	}
+
+	.featured .navbar-brand{
+		width: 100%;
 	}
 }

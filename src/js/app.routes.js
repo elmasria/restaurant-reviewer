@@ -8,7 +8,11 @@
 
 		$routeProvider.when('/', {
 
-			templateUrl: ''
+			templateUrl: './templates/all-restaurants.html'
+
+		}).when('/restaurant/:res_id', {
+
+			templateUrl: './templates/restaurant.html'
 
 		}).when('/404', {
 

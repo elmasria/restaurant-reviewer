@@ -1,0 +1,49 @@
+.space-section{
+	height: 25px;
+}
+
+.div-restaurant{
+	position: relative;
+}
+
+.restaurant-clickable{
+	width: 100%;
+	display: block;
+	height: 130px;
+	overflow: hidden;
+	opacity: 0.3;
+	transition: ease-in-out transform .35s;
+	border-radius: 4px;
+}
+.restaurant-clickable:hover, .restaurant-clickable:focus{
+	transform: scale(1.04);
+	outline: none!important;
+	-webkit-box-shadow: -1px -2px 66px -11px rgba(220,51,82,1);
+	-moz-box-shadow: -1px -2px 66px -11px rgba(220,51,82,1);
+	box-shadow: -1px -2px 66px -11px rgba(220,51,82,1);
+}
+.restaurant-image {
+	width: 100%;
+}
+
+.restaurant-name{
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-weight: 700;
+	color: #dc3352;
+	left: 15px;
+
+}
+
+.restaurant-rating{
+	position: absolute;
+	top: 0;
+	right: 15px;
+}
+
+.rating-icon{
+	color: #dc3352;
+}

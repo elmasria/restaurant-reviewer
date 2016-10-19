@@ -1,0 +1,24 @@
+<div class="space-section"></div>
+<section ng-controller="restaurantsController as restaurantsCtrl" >
+	<div class="col-xs-12 col-md-6 col-lg-4 div-restaurant" ng-repeat="rest in restaurantsCtrl.restaurants">
+		<a href="#/restaurant/{{rest.id}}" class="restaurant-clickable">
+			<img ng-src="{{rest.photograph}}" class="restaurant-image" alt="{{rest.name}}">
+		</a>
+		<h3 class="restaurant-name">{{rest.name.slice(0,15)}}</h3>
+		<p class="restaurant-rating">
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': rest.average_rating > 1, 'glyphicon-star-empty': rest.average_rating == 0}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': rest.average_rating >=2, 'glyphicon-star-empty': rest.average_rating <2}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': rest.average_rating >=3, 'glyphicon-star-empty': rest.average_rating <3}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': rest.average_rating >=4, 'glyphicon-star-empty': rest.average_rating <4}"></span>
+			<span class="glyphicon  rating-icon" ng-class="{'glyphicon-star': rest.average_rating >=5, 'glyphicon-star-empty': rest.average_rating < 5}"></span>
+		</p>
+		<section class="p-restaurnant-details">
+			<p class="pull-left">
+				<i class="glyphicon glyphicon-flag"></i><span> {{rest.location.city}}</span>
+			</p>
+			<p class="pull-right">
+				<i class="glyphicon glyphicon-cutlery"></i> <span> {{rest.cuisines}}</span>
+			</p>
+		</section>
+	</div>
+</section>

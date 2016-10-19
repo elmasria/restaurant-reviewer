@@ -1,0 +1,121 @@
+.image-container{
+	width: 100%;
+	max-height: 150px;
+	overflow: hidden;
+}
+.div-restaurant-rating{
+	text-align: right;
+	transition: ease-in-out transform .35s;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.h3-restaurant-name{
+	font-weight: 700;
+	color: #dc3352;
+	margin-top: 0;
+}
+
+.section-restaurant-details{
+	margin-top: 10px;
+}
+.div-restaurant-rating:hover, .div-restaurant-rating:focus {
+	outline: none;
+	transform: scale(1.04);
+}
+.div-review {
+	-webkit-box-shadow:0px 2px 28px -6px rgba(223,63,90,0.2);
+	-moz-box-shadow:0px 2px 28px -6px rgba(223,63,90, 0.2);
+	box-shadow:0px 2px 28px -6px rgba(223,63,90, 0.2);
+	height: 95px;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+.div-review p {
+	font-size: 12px;
+}
+
+.btn-add-review{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	height: 50px;
+	width: 50px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(167,156,142,.52);
+	border-radius: 50%;
+	border: 3px solid #fff;
+	cursor: pointer;
+	font-size: 2rem;
+	outline: 0;
+	color: #000;
+	padding: 8px;
+
+}
+
+.btn-add-review:hover,.btn-add-review:focus {
+	background: #dc3352;
+	color: #fff;
+}
+
+.h4-header{
+	width: 100%;
+	text-align: center;
+	font-weight: 700;
+	color: #dc3352;
+	margin-bottom: 25px;
+}
+
+.reviewer-link{
+	color: rgb(0, 87, 140);
+	background: rgb(245, 245, 245);
+	opacity: 1;
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.modal-header.featured{
+	width: 100%;
+	text-align: center;
+	font-weight: 700;
+	background-color: #dc3352;
+}
+
+.featured .modal-title{
+	width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+}
+.modal-footer.featured{
+	border-top: 0;
+}
+@media (max-width: 768px){
+	.div-restaurant-rating{
+		text-align: left;
+	}
+	.div-restaurant-rating{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.div-review {
+		height: 150px;
+	}
+	.div-review p{
+		height: 70px;
+	}
+
+	.restaurant-section{
+		margin-bottom: 60px;
+	}
+}
+
+.focus-style:focus{
+	outline: 0;
+	-webkit-box-shadow: 11px 11px 10px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 11px 10px -6px rgba(0,0,0,0.75);
+box-shadow: 11px 11px 10px -6px rgba(0,0,0,0.75);
+    background-color: #311e3e;
+    color: #fff;
+    padding: 5px;
+}

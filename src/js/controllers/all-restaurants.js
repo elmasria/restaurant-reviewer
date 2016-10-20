@@ -1,17 +1,9 @@
 (function () {
 	'use strict';
 
-	angular.module('restaurant-reviewer-app').controller('restaurantsController', ['constants', 'httpService', mainFunction]);
+	angular.module('restaurant-reviewer-app').controller('restaurantsController', ['$rootScope', 'constants', 'httpService', mainFunction]);
 
-	function mainFunction(cnst, httpService) {
-
+	function mainFunction($rootScope, cnst, httpService) {
 		var controller = this;
-		controller.restaurants = [];
-		httpService.GetData('./data/restaurants.json')
-		.then(function(response){
-			console.log(response)
-			controller.restaurants = response.restaurants
-		})
-		.catch()
 	}
 }());

@@ -6,7 +6,6 @@
 	function mainFunction(cnst) {
 
 		var controller = this;
-		controller.restaurants = [];
 		controller.addReview = function () {
 			console.log("a");
 		};

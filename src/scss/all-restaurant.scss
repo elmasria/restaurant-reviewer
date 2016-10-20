@@ -47,3 +47,11 @@
 .rating-icon{
 	color: #dc3352;
 }
+
+.sr-only.featured:focus{
+	width: 80%;
+    margin: 0 auto 10px auto;
+    height: initial;
+    position: static;
+
+}

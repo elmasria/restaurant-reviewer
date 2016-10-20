@@ -24,7 +24,7 @@
 	<section class="section-reviews">
 		<div class="col-xs-12 col-lg-6 div-review" ng-repeat="review in restaurantCtrl.restaurant.reviews">
 			<a href="#/" class="reviewer-link" aria-label="Read More review from {{review.author_name}}" data-review="{{review}}" data-toggle="modal" data-target="#reviewModal" ng-click="restaurantCtrl.moreReviewDetails($event)">{{review.author_name}}</a>
-			<p>{{review.text.slice(0,250)}}</p>
+			<p>{{review.text.slice(0,200)}}</p>
 			<div class="row">
 				<div class="col-xs-6"><i class="glyphicon glyphicon-time"></i> {{review.time*1000|date}}</div>
 				<div class="col-xs-6 text-right">

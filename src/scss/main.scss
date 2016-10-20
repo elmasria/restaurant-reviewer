@@ -2,3 +2,13 @@ body{
 	background-color: #f5f5f5;
 }
 
+.btn-default.featured {
+	width: 100%;
+    color: #fff;
+    background-color: #dc3352;
+}
+
+.btn-default.featured:focus, .btn-default.featured:hover {
+	outline:0;
+	background-color: #311e3e;
+}

@@ -59,6 +59,7 @@ paths.angularMainCtrl = paths.source + 'js/controllers/main.js';
 paths.angularAllRestaurantsCtrl = paths.source + 'js/controllers/all-restaurants.js';
 paths.angularRestaurantCtrl = paths.source + 'js/controllers/restaurant.js';
 paths.angularAddReviewCtrl = paths.source + 'js/controllers/add-review.js';
+paths.angularFilterCtrl = paths.source + 'js/controllers/filter.js';
 
 
 // Services
@@ -70,6 +71,7 @@ paths.angularModalService = paths.source + 'js/services/modal.js';
 // Directives
 paths.angularModalDirective = paths.source + 'js/directives/modal-directive.js';
 paths.angularReviewDetailsDirective = paths.source + 'js/directives/review-details.js';
+paths.angularFilterDirective = paths.source + 'js/directives/filter.js';
 
 
 // HTML
@@ -78,6 +80,7 @@ paths.AllRestaurantsHtmlTemplate = paths.source  +'templates/all-restaurants.htm
 paths.RestaurantHtmlTemplate = paths.source  +'templates/restaurant.html';
 paths.ReviewModalTemplate = paths.source  +'templates/review-modal.html';
 paths.ReviewDetailsTemplate = paths.source  +'templates/review-details.html';
+paths.FilterTemplate = paths.source  +'templates/filter.html';
 
 
 
@@ -87,6 +90,7 @@ paths.toastSCSS = paths.source  +'scss/toast.scss';
 paths.navSCSS = paths.source  +'scss/nav.scss';
 paths.allRestaurantSCSS = paths.source  +'scss/all-restaurant.scss';
 paths.RestaurantSCSS = paths.source  +'scss/restaurant.scss';
+paths.FilterSCSS = paths.source  +'scss/filter.scss';
 
 
 // Static
@@ -121,20 +125,24 @@ gulp.task('watch', function () {
 		paths.angularHttpService,
 		paths.angularRestaurantCtrl,
 		paths.angularAddReviewCtrl,
-		paths.angularReviewDetailsDirective], ['min:js']);
+		paths.angularFilterCtrl,
+		paths.angularReviewDetailsDirective,
+		paths.angularFilterDirective], ['min:js']);
 
 	gulp.watch([
 		paths.toastSCSS,
 		paths.navSCSS,
 		paths.mainSCSS,
 		paths.allRestaurantSCSS,
-		paths.RestaurantSCSS], ['min:css']);
+		paths.RestaurantSCSS,
+		paths.FilterSCSS], ['min:css']);
 
 	gulp.watch([
 		paths.AllRestaurantsHtmlTemplate,
 		paths.RestaurantHtmlTemplate,
 		paths.ReviewModalTemplate,
-		paths.ReviewDetailsTemplate], ['minify:html-templates']);
+		paths.ReviewDetailsTemplate,
+		paths.FilterTemplate], ['minify:html-templates']);
 
 
 
@@ -177,7 +185,8 @@ gulp.task('minify:html-templates', function() {
 		paths.AllRestaurantsHtmlTemplate,
 		paths.RestaurantHtmlTemplate,
 		paths.ReviewModalTemplate,
-		paths.ReviewDetailsTemplate])
+		paths.ReviewDetailsTemplate,
+		paths.FilterTemplate])
 	.pipe(removeHtmlComments())
 	.pipe(htmlmin({collapseWhitespace: true}))
 	.pipe(gulp.dest(paths.templatesDest))
@@ -201,9 +210,11 @@ gulp.task('min:js', function() {
 		paths.angularModalService,
 		paths.angularModalDirective,
 		paths.angularReviewDetailsDirective,
+		paths.angularFilterDirective,
 		paths.angularAllRestaurantsCtrl,
 		paths.angularRestaurantCtrl,
-		paths.angularAddReviewCtrl ])
+		paths.angularAddReviewCtrl,
+		paths.angularFilterCtrl ])
 	.pipe(concat(paths.jsDest +'/app.min.js'))
 	//.pipe(strip())
 	//.pipe(uglify())

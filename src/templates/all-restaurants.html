@@ -1,6 +1,6 @@
 <div class="space-section"></div>
 <section ng-controller="restaurantsController as restaurantsCtrl" >
-	<div id="resultSearch" class="sr-only featured" tabindex="-1" aria-label={{searchResult}}>{{searchResult}}</div>
+	<div id="resultSearch" class="sr-only featured" aria-live="polite">{{searchResult}}</div>
 	<div class="col-xs-12 col-md-6 col-lg-4 div-restaurant" ng-repeat="rest in restaurants">
 		<a href="#/restaurant/{{rest.id}}" class="restaurant-clickable">
 			<img ng-src="{{rest.photograph}}" class="restaurant-image" alt="{{rest.name}}">

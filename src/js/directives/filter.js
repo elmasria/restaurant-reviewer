@@ -17,13 +17,13 @@
 					modalService.init(focusedElementBeforeModal, modal);
 					rtarget = e.relatedTarget;
 				});
-				element.on('hidden.bs.modal', function () {
+				/*element.on('hidden.bs.modal', function () {
 					$(rtarget).one('focus', function(e){
 						$(this).blur();
 						$('#resultSearch')[0].focus();
 					})
 
-				});
+				});*/
 			}
 		}
 	}

@@ -64,6 +64,11 @@
 	border:0;
 }
 
+.featured .navbar-brand:focus, .featured .navbar-brand:hover {
+	outline: 0;
+	color: #311e3e;
+}
+
 @media (min-width: 768px){
 	.navbar.featured {
 		border-radius: 0;

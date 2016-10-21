@@ -1,13 +1,11 @@
 (function () {
 	'use strict';
 
-	angular.module('restaurant-reviewer-app').controller('ReviewModalController', ['constants', mainFunction]);
+	angular.module('restaurant-reviewer-app').controller('ReviewModalController', ['constants', '$scope', mainFunction]);
 
-	function mainFunction(cnst) {
+	function mainFunction(cnst, $scope) {
 
 		var controller = this;
-		controller.addReview = function () {
-			console.log("a");
-		};
+
 	}
 }());

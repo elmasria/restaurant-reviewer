@@ -9,7 +9,7 @@
 		allRestaurants = $rootScope.AllData.restaurants,
 		restaurantCursor = 0;
 		controller.restaurants = [];
-
+		controller.dayOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 		controller.moreReviewDetails = function (event) {
 			event.preventDefault();
 			var review = angular.element(event.currentTarget).data('review');
@@ -17,6 +17,11 @@
 			controller.selectedrating =review.rating;
 			controller.selectedAuthor =review.author_name;
 			controller.selectedtime =review.time;
+		};
+
+		controller.getTime = function(oCtime){
+			var timeArray = (""+oCtime).split("");
+			return timeArray[0]+""+timeArray[1]+":"+timeArray[2]+""+timeArray[3];
 		};
 
 		controller.addReview = function(){

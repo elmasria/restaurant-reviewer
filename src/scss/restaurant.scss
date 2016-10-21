@@ -120,3 +120,29 @@ box-shadow: 11px 11px 10px -6px rgba(0,0,0,0.75);
     color: #fff;
     padding: 5px;
 }
+
+.operating-hours {
+    box-shadow: 0 2px 28px -6px rgba(223,63,90,.2);
+    border-radius: 2px;
+    padding-bottom: 10px;
+    width: 90%;
+    margin: auto auto 25px;
+    text-align: center;
+}
+
+.day-of-the-week{
+	width: 80px;
+    display: inline-block;
+    text-align: left;
+}
+
+.div-operating-hours{
+	width: 90%;
+	margin: 2px auto;
+	text-align: center;
+}
+.h4-operating-hours{
+	width: 100%;
+	padding: 10px 0;
+	margin: auto;
+}

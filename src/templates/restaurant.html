@@ -20,6 +20,14 @@
 		<p><i class="glyphicon glyphicon-map-marker"></i><span> {{restaurantCtrl.restaurant.location.address}}</span> </p>
 		<p><i class="glyphicon glyphicon-cutlery"></i><span> {{restaurantCtrl.restaurant.cuisines}}</span> </p>
 	</section>
+	<section class="operating-hours">
+	<h4 class="h4-header h4-operating-hours">Operating Hours</h4>
+		<div class="div-operating-hours" ng-repeat="time in restaurantCtrl.restaurant.periods">
+		<span class="day-of-the-week">{{restaurantCtrl.dayOfTheWeek[time.open.day]}}</span>
+		<span>{{restaurantCtrl.getTime(time.open.time)}} - </span>
+		<span>{{restaurantCtrl.getTime(time.close.time)}}</span>
+		</div>
+	</section>
 	<h4 class="h4-header">Reviews</h4>
 	<section class="section-reviews">
 		<div class="col-xs-12 col-lg-6 div-review" ng-repeat="review in restaurantCtrl.restaurant.reviews | orderBy: 'review.time':true">

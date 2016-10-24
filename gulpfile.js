@@ -216,8 +216,8 @@ gulp.task('min:js', function() {
 		paths.angularAddReviewCtrl,
 		paths.angularFilterCtrl ])
 	.pipe(concat(paths.jsDest +'/app.min.js'))
-	//.pipe(strip())
-	//.pipe(uglify())
+	.pipe(strip())
+	.pipe(uglify())
 	.pipe(gulp.dest('.'))
 	.pipe(reload({stream: true}));
 });
@@ -241,7 +241,7 @@ gulp.task('min:css', function () {
 
 	mergedStream = merge(cssStream, scssStream)
 		.pipe(concat(paths.cssDest + '/app.min.css'))
-		//.pipe(cssmin())
+		.pipe(cssmin())
 		.pipe(gulp.dest('.'));
 
 

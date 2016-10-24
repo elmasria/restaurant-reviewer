@@ -4,8 +4,8 @@
   "theme_color": "#222d37",
   "background_color": "#a8d8fe",
   "display": "fullscreen",
-  "Scope": "/dist/",
-  "start_url": "/dist/",
+  "Scope": "/restaurant-reviewer/dist/",
+  "start_url": "/restaurant-reviewer/dist/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
